@@ -19,10 +19,10 @@ public class JavaBird extends StateBasedGame {
         super(gameName);
         this.addState(new Menu(MENU));
         this.addState(new Play(PLAY));
-
     }
 
-    public static void Main(String[] args) {
+
+    public static void main(String[] args) {
         AppGameContainer appgc;
         try {
             appgc = new AppGameContainer(new JavaBird(gameName));
@@ -34,8 +34,8 @@ public class JavaBird extends StateBasedGame {
     }
 
     public void initStatesList(GameContainer gc) throws SlickException {
-        this.getState(menu).init(gc, this);
-        this.getState(play).init(gc, this);
-        this.enterState(menu);
+        this.getState(MENU).init(gc, this);
+        this.getState(PLAY).init(gc, this);
+        this.enterState(MENU);
     }
 }
