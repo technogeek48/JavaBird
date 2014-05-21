@@ -19,10 +19,10 @@ public class JavaBird extends StateBasedGame {
         super(gameName);
         this.addState(new Menu(MENU));
         this.addState(new Play(PLAY));
-
     }
 
-    public static void Main(String[] args) {
+
+    public static void main(String[] args) {
         AppGameContainer appgc;
         try {
             appgc = new AppGameContainer(new JavaBird(gameName));
