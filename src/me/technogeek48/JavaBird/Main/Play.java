@@ -4,7 +4,6 @@ package me.technogeek48.JavaBird.Main;
  * Created by michael on 2014-05-20.
  **/
 
-import logging.LogHelper;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -21,7 +20,7 @@ public class Play extends BasicGameState {
 
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         Logger logger = Logger.getLogger("LogHelper");
-        logger.log(Level.INFO, "Entered Play State");
+        logger.log(Level.INFO, "Play State Initialized");
     }
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
