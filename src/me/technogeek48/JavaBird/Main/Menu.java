@@ -3,6 +3,10 @@ package me.technogeek48.JavaBird.Main;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.awt.Font;
+
 /**
  * Created by michael on 2014-05-20.
  */
@@ -13,12 +17,23 @@ public class Menu extends BasicGameState{
 
     }
 
-    public void init(GameContainer gc, StateBasedGame sbg) throws SlickException{
+    TrueTypeFont titleFont;
 
+    public void init(GameContainer gc, StateBasedGame sbg) throws SlickException{
+        Logger logger = Logger.getLogger("LogHelper");
+        logger.log(Level.INFO, "&a Menu State Initialized");
+        Font awtFont = new Font("Helvetica", Font.PLAIN, 24);
+        titleFont = new TrueTypeFont(awtFont, false);
     }
 
-    public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
-
+    public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{ //480 177
+        Image bird = new Image("resources/GreenBird.png");
+        //g.drawRect(50, 100, 60, 120);
+        titleFont.drawString(568, 118, "JavaBird", Color.blue);
+        int mouseX = gc.getInput().getMouseX();
+        int mouseY = gc.getInput().getMouseY();
+        g.drawString("X: " + mouseX + " Y: " + mouseY, 1025, 10);
+        g.drawImage(bird, 480, 160);
     }
 
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
